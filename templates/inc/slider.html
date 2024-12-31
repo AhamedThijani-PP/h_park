@@ -1,0 +1,45 @@
+{% load static %}
+
+<section id="home" class="slider" data-stellar-background-ratio="0.5">
+    <div class="row">
+
+              <div class="owl-carousel owl-theme">
+                   <div class="item item-first">
+                        <div class="caption">
+                             <div class="container">
+                                  <div class="col-md-8 col-sm-12">
+                                       <h3>H Park Restaurant</h3>
+                                       <h1>Our mission is to provide an unforgettable experience</h1>
+                                       <a href="{% url 'Category' %}#team" class="section-btn btn btn-default smoothScroll">View our Menu</a>
+                                  </div>
+                             </div>
+                        </div>
+                   </div>
+                   {% for item in slider%}
+                   <div class="item item-second" style="background-image: url('{{ item.slider_image.url }}');">
+                        <div class="caption">
+                             <div class="container">
+                                  <div class="col-md-8 col-sm-12">
+                                       <h3>{{ item.title }}</h3>
+                                       <h1>{{ item.description }}</h1>
+                                       <a href="#contact" class="section-btn btn btn-default smoothScroll">Contact Us</a>
+                                  </div>
+                             </div>
+                        </div>
+                   </div>
+                   {% endfor %}
+                   <div class="item item-third">
+                        <div class="caption">
+                             <div class="container">
+                                  <div class="col-md-8 col-sm-12">
+                                       <h3>New Restaurant in Town</h3>
+                                       <h1>Enjoy our special menus every Day</h1>
+                                       <a href="#footer" class="section-btn btn btn-default smoothScroll">Reservation</a>
+                                  </div>
+                             </div>
+                        </div>
+                   </div>
+              </div>
+
+    </div>
+</section>
